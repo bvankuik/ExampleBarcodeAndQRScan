@@ -16,4 +16,9 @@ Some current shortcomings:
   search for the opposite position. It may be better to search for the NEXT
   device. I.e. in case of the iPhone X, go from the normal camera to the 2x
   camera.
+* When the user has an iPad and uses this app in split view, then the capture
+  session is interrupted. If they resize the app and make it full screen, iOS
+  doesn't send the notification AVCaptureSessionInterruptionEnded and thus the
+  app doesn't continue the capture session. Backgrounding and foregrounding the
+  app resumes it again.
 
