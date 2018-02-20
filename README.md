@@ -11,7 +11,8 @@ are picked up.
 
 Some current shortcomings:
 * Although you can flip the camera, I did not succeed in making the
-  front-facing camera read a machine-readable code.
+  front-facing camera read a machine-readable code on my iPhone X. Perhaps it
+  should be detected and skipped.
 * In the code that flips the camera, I simply loop through all devices and
   search for the opposite position. It may be better to search for the NEXT
   device. I.e. in case of the iPhone X, go from the normal camera to the 2x
