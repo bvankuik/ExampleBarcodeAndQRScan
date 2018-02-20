@@ -12,7 +12,6 @@
 		891268392029E5DF00998941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891268382029E5DF00998941 /* Assets.xcassets */; };
 		8912683C2029E5DF00998941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8912683A2029E5DF00998941 /* LaunchScreen.storyboard */; };
 		892FE26C203B044D006108B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FE26B203B044D006108B2 /* ViewController.swift */; };
-		89F436752029F1AB002DD531 /* VIVideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F436742029F1AB002DD531 /* VIVideoPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		8912683B2029E5DF00998941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8912683D2029E5DF00998941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		892FE26B203B044D006108B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		89F436742029F1AB002DD531 /* VIVideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIVideoPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 				891268382029E5DF00998941 /* Assets.xcassets */,
 				8912683A2029E5DF00998941 /* LaunchScreen.storyboard */,
 				8912683D2029E5DF00998941 /* Info.plist */,
-				89F436742029F1AB002DD531 /* VIVideoPreviewView.swift */,
 				892FE26B203B044D006108B2 /* ViewController.swift */,
 			);
 			path = ExampleBarcodeAndQRScan;
@@ -138,7 +135,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89F436752029F1AB002DD531 /* VIVideoPreviewView.swift in Sources */,
 				891268342029E5DF00998941 /* BarcodeScannerViewController.swift in Sources */,
 				892FE26C203B044D006108B2 /* ViewController.swift in Sources */,
 				891268322029E5DF00998941 /* AppDelegate.swift in Sources */,

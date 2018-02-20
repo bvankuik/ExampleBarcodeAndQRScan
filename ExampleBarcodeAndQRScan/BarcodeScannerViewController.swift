@@ -9,6 +9,29 @@
 import UIKit
 import AVFoundation
 
+
+private class VideoPreviewView: UIView {
+    var previewLayer: AVCaptureVideoPreviewLayer {
+        return self.layer as! AVCaptureVideoPreviewLayer
+    }
+    
+    override class var layerClass: AnyClass {
+        return AVCaptureVideoPreviewLayer.self
+    }
+    
+    init() {
+        super.init(frame: CGRect())
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.backgroundColor = UIColor.darkGray
+        self.previewLayer.videoGravity = .resizeAspectFill
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+}
+
+
 class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     private let viewFinderView = UIView()
     private let barcodeLabel = UILabel()
@@ -17,7 +40,7 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     private var deviceInput: AVCaptureDeviceInput!
     private var metadataOutput: AVCaptureMetadataOutput!
     private var captureSession: AVCaptureSession!
-    private var previewView = VIVideoPreviewView()
+    private var previewView = VideoPreviewView()
     private let interruptedOverlayView = UIVisualEffectView()
     private let objectTypesToScan: [AVMetadataObject.ObjectType] = [
         .code39, .ean13, .qr
@@ -68,11 +91,9 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         
         // Go through all devices and find one where the device position is not the same as the current one.
         // I.e. if we're using the front facing camera, search for the other one
-        for device in deviceDiscoverySession.devices {
-            if device.position != self.device.position {
-                discoveredDevice = device
-                break
-            }
+        for device in deviceDiscoverySession.devices where device.position != self.device.position {
+            discoveredDevice = device
+            break
         }
 
         self.teardown()

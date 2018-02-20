@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class ViewController: UIViewController {
     private let resultLabel = UILabel()
     private let scanButton = UIBarButtonItem(barButtonSystemItem: .camera, target: nil, action: nil)
-    
+
     @objc func scanButtonAction() {
         let viewController = BarcodeScannerViewController()
         viewController.completionBlock = {
@@ -38,5 +39,10 @@ class ViewController: UIViewController {
             self.resultLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
         ]
         self.view.addConstraints(constraints)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { _ in
+        })
     }
 }
